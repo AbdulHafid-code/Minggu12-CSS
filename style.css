@@ -1,0 +1,375 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050609;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    height: 90px;
+    padding: 0 4.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #8752ff;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 38px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* Garis bawah */
+.navbar nav a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #873cff;
+    bottom: -12px;
+    left: 0;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s;
+}
+
+/* Saat hover dan aktif */
+.navbar nav a:hover::after,
+.navbar nav a.active::after {
+    transform: scaleX(1);
+}
+
+.talk-btn {
+    background: white;
+    color: #111;
+    padding: 14px 22px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.talk-btn span {
+    margin-left: 12px;
+    font-size: 15px;
+}
+
+.talk-btn:hover {
+    background: #8b4dff;
+    color: white;
+}
+
+/* HERO */
+.hero {
+    min-height: calc(100vh - 90px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 4.5% 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* HERO CONTENT */
+.hero-content {
+    width: 50%;
+    z-index: 2;
+    padding-bottom: 35px;
+}
+
+.greeting {
+    color: #a16aff;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(38px, 5vw, 55px);
+    line-height: 1.15;
+    font-weight: 750;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: fit-content;
+    margin-bottom: 20px;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.buttons a {
+    text-decoration: none;
+    padding: 14px 21px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.primary-btn {
+    background: linear-gradient(120deg, #7435ed, #9855ff);
+    color: white;
+    box-shadow: 0 5px 25px rgba(128, 65, 255, 0.2);
+}
+
+.primary-btn span {
+    margin-left: 12px;
+    font-size: 18px;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(128, 65, 255, 0.4);
+}
+
+.secondary-btn {
+    color: white;
+    border: 1px solid #444;
+    background: rgba(255,255,255,0.02);
+}
+
+.secondary-btn span {
+    margin-left: 8px;
+}
+
+.secondary-btn:hover {
+    border-color: #9254ff;
+}
+
+/* SOCIAL ICONS */
+.socials {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.socials a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #11141b;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    background: #8245f5;
+    transform: translateY(-4px);
+}
+
+/* PROFILE IMAGE */
+.hero-image {
+    width: 50%;
+    height: 530px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.hero-image img {
+    height: 90vh;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: bottom;
+    position: relative;
+    z-index: 2;
+    /* filter: drop-shadow(0 0 25px rgba(140, 60, 255, 0.15)); */
+}
+
+/* PURPLE GLOW */
+.purple-glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: #7926ff;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.7;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* EXPERIENCE CARD */
+.experience {
+    position: absolute;
+    right: -15px;
+    bottom: 110px;
+    z-index: 3;
+    padding: 17px;
+    background: rgba(15, 16, 30, 0.75);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+}
+
+.experience h2 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.experience p {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* DECORATION */
+.dots {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background-image: radial-gradient(#8b4dff 2px, transparent 2px);
+    background-size: 14px 14px;
+    opacity: 0.35;
+}
+
+.dots-one {
+    left: 0;
+    top: 45%;
+}
+
+.dots-two {
+    right: 0;
+    top: 15%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+    .navbar nav {
+        gap: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-image {
+        height: 450px;
+    }
+
+    .experience {
+        right: 0;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: auto;
+        padding: 25px 6%;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .navbar nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        padding: 10px 0;
+        gap: 25px;
+    }
+
+    .navbar nav a {
+        white-space: nowrap;
+    }
+
+    .talk-btn {
+        padding: 11px 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 45px 6% 0;
+        align-items: stretch;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 400px;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+    }
+
+    .experience {
+        right: 0;
+        bottom: 70px;
+    }
+}
